@@ -183,8 +183,16 @@ fellow_df = read_excel("data/LotR_Words.xlsx", range = "B3:D6")
 
 ## Read a SAS file
 
+Didn’t work in class
+
 ``` r
 pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```
+
+## How to export data
+
+``` r
+write_csv(fellow_df, "data/fellowship_words.csv")
 ```
 
 I’m an R Markdown document!
@@ -202,4 +210,4 @@ length(samp)
 
 # Section 2
 
-I can take the mean of the sample, too! The mean is -0.0876864.
+I can take the mean of the sample, too! The mean is 0.1133317.
