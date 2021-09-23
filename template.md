@@ -167,6 +167,26 @@ litters_data = read_csv(file = "./data/FAS_litters.csv",
 )
 ```
 
+\#\#Reading from Excel
+
+Reading MLB data
+
+``` r
+mlb11_df = read_excel("data/mlb11.xlsx")
+```
+
+LotR Words
+
+``` r
+fellow_df = read_excel("data/LotR_Words.xlsx", range = "B3:D6")
+```
+
+## Read a SAS file
+
+``` r
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```
+
 I’m an R Markdown document!
 
 # Section 1
@@ -182,4 +202,4 @@ length(samp)
 
 # Section 2
 
-I can take the mean of the sample, too! The mean is -0.0362798.
+I can take the mean of the sample, too! The mean is -0.0876864.
