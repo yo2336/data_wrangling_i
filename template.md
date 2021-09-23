@@ -84,9 +84,13 @@ tail(litters_df)
     ## 6 Low8  #110                25.5        42.7          20               7
     ## # ... with 2 more variables: pups_dead_birth <dbl>, pups_survive <dbl>
 
+view shows data in separate window in table form
+
 ``` r
 view(litters_df)
 ```
+
+skimr shows brief summary
 
 ``` r
 skimr::skim(litters_df)
@@ -124,6 +128,45 @@ Data summary
 | pups\_dead\_birth |          0 |           1.00 |  0.33 | 0.75 |  0.0 |  0.00 |  0.00 |  0.00 |  4.0 | ▇▂▁▁▁ |
 | pups\_survive     |          0 |           1.00 |  6.41 | 2.05 |  1.0 |  5.00 |  7.00 |  8.00 |  9.0 | ▁▃▂▇▇ |
 
+\#\#ARguments in `read_csv`
+
+``` r
+litters_df =
+  read_csv(
+    "data/FAS_litters.csv",
+    skip = 5,
+    col_names = FALSE,
+    na = "Low8")
+```
+
+    ## Rows: 45 Columns: 8
+
+    ## -- Column specification --------------------------------------------------------
+    ## Delimiter: ","
+    ## chr (4): X1, X2, X3, X4
+    ## dbl (4): X5, X6, X7, X8
+
+    ## 
+    ## i Use `spec()` to retrieve the full column specification for this data.
+    ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+\#\#Parsing Columns
+
+``` r
+litters_data = read_csv(file = "./data/FAS_litters.csv",
+  col_types = cols(
+    Group = col_character(),
+    `Litter Number` = col_character(),
+    `GD0 weight` = col_double(),
+    `GD18 weight` = col_double(),
+    `GD of Birth` = col_integer(),
+    `Pups born alive` = col_integer(),
+    `Pups dead @ birth` = col_integer(),
+    `Pups survive` = col_integer()
+  )
+)
+```
+
 I’m an R Markdown document!
 
 # Section 1
@@ -139,4 +182,4 @@ length(samp)
 
 # Section 2
 
-I can take the mean of the sample, too! The mean is -0.060025.
+I can take the mean of the sample, too! The mean is -0.0362798.
