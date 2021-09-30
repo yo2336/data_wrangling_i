@@ -51,6 +51,7 @@ analysis_df %>%
   pivot_wider(
     names_from = "time",
     values_from = "group_mean"
-  )
+  ) %>%
+  knitr::kable()
 ```
 

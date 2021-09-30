@@ -42,11 +42,11 @@ analysis_df %>%
   pivot_wider(
     names_from = "time",
     values_from = "group_mean"
-  )
+  ) %>%
+  knitr::kable()
 ```
 
-    ## # A tibble: 2 x 3
-    ##   group         a     b
-    ##   <chr>     <dbl> <dbl>
-    ## 1 treatment     4     8
-    ## 2 control       3     6
+| group     |   a |   b |
+|:----------|----:|----:|
+| treatment |   4 |   8 |
+| control   |   3 |   6 |
